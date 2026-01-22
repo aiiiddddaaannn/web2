@@ -209,25 +209,14 @@ body {
     height: 300px;
 }
 
-.btn-primary {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 2px solid var(--card-border);
-    box-shadow: none;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-green);
-    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.2);
-}
-
+.btn-primary,
 .btn-secondary {
     background: transparent;
     color: var(--text-primary);
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+.btn-primary:hover,
 .btn-secondary:hover {
     border-color: var(--accent-green);
     box-shadow: 0 8px 24px rgba(0, 255, 136, 0.2);
