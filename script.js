@@ -1,5 +1,45 @@
 // Add smooth scroll behavior
 document.addEventListener('DOMContentLoaded', () => {
+    // Portfolio filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Get the category
+            const category = button.getAttribute('data-category');
+            
+            // Add ripple effect
+            const ripple = document.createElement('span');
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(0, 255, 136, 0.5)';
+            ripple.style.width = '10px';
+            ripple.style.height = '10px';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            ripple.style.pointerEvents = 'none';
+            
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = '50%';
+            ripple.style.top = '50%';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+            
+            // Here you can add filtering logic for portfolio items
+            console.log('Selected category:', category);
+        });
+    });
+    
     // Add stagger animation to project cards
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((card, index) => {
