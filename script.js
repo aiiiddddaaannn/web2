@@ -2,6 +2,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Portfolio filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const showcasePanels = document.querySelectorAll('.showcase-panel');
+    const featureTriggers = document.querySelectorAll('.feature-trigger');
+    const featureModal = document.getElementById('feature-modal');
+    const featureModalTitle = document.getElementById('feature-modal-title');
+    const featureList = document.getElementById('feature-list');
+    const featureModalClose = document.querySelector('.feature-modal-close');
+
+    if (featureModalClose) {
+        featureModalClose.textContent = 'x';
+    }
+
+    const setActiveCategory = (category) => {
+        showcasePanels.forEach(panel => {
+            const panelCategory = panel.getAttribute('data-showcase');
+            const shouldShow = category === 'all'
+                ? panelCategory !== 'all'
+                : panelCategory === category;
+
+            panel.classList.toggle('active', shouldShow);
+        });
+    };
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -13,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Get the category
             const category = button.getAttribute('data-category');
+            setActiveCategory(category);
             
             // Add ripple effect
             const ripple = document.createElement('span');
@@ -35,9 +57,53 @@ document.addEventListener('DOMContentLoaded', () => {
             
             setTimeout(() => ripple.remove(), 600);
             
-            // Here you can add filtering logic for portfolio items
             console.log('Selected category:', category);
         });
+    });
+
+    const initialActiveButton = document.querySelector('.filter-btn.active');
+    if (initialActiveButton) {
+        const initialCategory = initialActiveButton.getAttribute('data-category') || 'all';
+        setActiveCategory(initialCategory);
+    }
+
+    const closeFeatureModal = () => {
+        featureModal.hidden = true;
+        document.body.style.overflow = '';
+    };
+
+    featureTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const title = trigger.getAttribute('data-title') || 'Bot Features';
+            const features = (trigger.getAttribute('data-features') || '')
+                .split('|')
+                .map(item => item.trim())
+                .filter(Boolean);
+
+            featureModalTitle.textContent = `${title} Features`;
+            featureList.innerHTML = '';
+
+            features.forEach(feature => {
+                const item = document.createElement('li');
+                item.textContent = feature;
+                featureList.appendChild(item);
+            });
+
+            featureModal.hidden = false;
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    featureModal.addEventListener('click', (event) => {
+        if (event.target instanceof HTMLElement && event.target.dataset.closeModal === 'true') {
+            closeFeatureModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !featureModal.hidden) {
+            closeFeatureModal();
+        }
     });
     
     // Add stagger animation to project cards
@@ -67,28 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
             });
-        });
-    });
-
-    // Add click ripple effect
-    projectCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            const ripple = document.createElement('div');
-            ripple.style.position = 'absolute';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(0, 255, 136, 0.5)';
-            ripple.style.width = '20px';
-            ripple.style.height = '20px';
-            ripple.style.pointerEvents = 'none';
-            ripple.style.animation = 'ripple 0.6s ease-out';
-            
-            const rect = card.getBoundingClientRect();
-            ripple.style.left = (e.clientX - rect.left - 10) + 'px';
-            ripple.style.top = (e.clientY - rect.top - 10) + 'px';
-            
-            card.appendChild(ripple);
-            
-            setTimeout(() => ripple.remove(), 600);
         });
     });
 

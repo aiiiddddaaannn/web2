@@ -82,6 +82,14 @@ body {
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+.intro-copy {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
 .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -174,6 +182,15 @@ body {
     gap: 1.5rem;
     margin: 3rem 0;
     flex-wrap: wrap;
+}
+
+.cta-buttons-top {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons-legacy {
+    display: none;
 }
 
 .btn {
@@ -277,6 +294,343 @@ body {
     margin-bottom: 2rem;
 }
 
+.portfolio-showcase {
+    margin-top: 2rem;
+}
+
+.showcase-panel {
+    display: none;
+    padding: 1.75rem;
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+        linear-gradient(135deg, rgba(0, 255, 136, 0.08), rgba(0, 255, 136, 0.02));
+}
+
+.showcase-panel.active {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+}
+
+.showcase-header,
+.empty-state {
+    margin-bottom: 1.5rem;
+}
+
+.showcase-eyebrow {
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    margin-bottom: 0.65rem;
+}
+
+.showcase-header h4,
+.empty-state h4 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.showcase-copy {
+    color: var(--text-secondary);
+    max-width: 620px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.media-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(12px);
+}
+
+.media-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 255, 136, 0.4);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.media-thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+}
+
+.design-thumb {
+    aspect-ratio: 4 / 3;
+}
+
+.bot-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at top, rgba(88, 101, 242, 0.25), transparent 45%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+        #11131b;
+}
+
+.bot-thumb-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+}
+
+.bot-thumb-icon svg {
+    width: 38px;
+    height: 38px;
+}
+
+.media-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.35));
+}
+
+.media-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.media-card:hover .media-thumb img {
+    transform: scale(1.04);
+}
+
+.media-badge {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    z-index: 1;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(10, 10, 10, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    color: #fff;
+}
+
+.media-card-body {
+    padding: 1.1rem 1.1rem 1.25rem;
+}
+
+.media-label {
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    margin-bottom: 0.5rem;
+}
+
+.media-card-body h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.55rem;
+}
+
+.media-description {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+}
+
+.media-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid rgba(0, 255, 136, 0.28);
+    background: rgba(0, 255, 136, 0.08);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.media-link:hover {
+    background: rgba(0, 255, 136, 0.15);
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.group-card {
+    display: flex;
+    align-items: stretch;
+    min-height: 100%;
+    background:
+        radial-gradient(circle at top left, rgba(0, 255, 136, 0.12), transparent 45%),
+        rgba(255, 255, 255, 0.03);
+}
+
+.group-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.group-card .media-link {
+    margin-top: auto;
+}
+
+.feature-modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    z-index: 50;
+}
+
+.feature-modal[hidden] {
+    display: none;
+}
+
+.feature-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.feature-modal-dialog {
+    position: relative;
+    width: min(560px, 100%);
+    max-height: min(80vh, 720px);
+    overflow: auto;
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+        #11141b;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.feature-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-modal-close {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.feature-modal-close:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.feature-list li {
+    padding: 0.8rem 0.95rem;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.showcase-empty {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+        rgba(255, 255, 255, 0.01);
+}
+
+.contact-section {
+    margin-top: 2rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 18px;
+    border: 1px solid var(--card-border);
+    background:
+        radial-gradient(circle at top left, rgba(88, 101, 242, 0.18), transparent 42%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+        var(--bg-secondary);
+}
+
+.contact-avatar {
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.contact-avatar svg {
+    width: 38px;
+    height: 38px;
+}
+
+.contact-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+.contact-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-line {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.contact-link {
+    margin-top: 0.25rem;
+}
+
 .filter-btn {
     display: flex;
     align-items: center;
@@ -354,7 +708,7 @@ body {
 }
 
 .filter-icon.roblox {
-    color: #00A2FF;
+    color: #e2231a;
 }
 
 .filter-icon.roblox svg {
@@ -468,6 +822,20 @@ body {
 
     .project-card {
         padding: 1.5rem;
+    }
+
+    .showcase-panel {
+        padding: 1.2rem;
+    }
+
+    .showcase-header h4,
+    .empty-state h4 {
+        font-size: 1.35rem;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
