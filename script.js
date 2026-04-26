@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const featureModalTitle = document.getElementById('feature-modal-title');
     const featureList = document.getElementById('feature-list');
     const featureModalClose = document.querySelector('.feature-modal-close');
+    const designPreviewTriggers = document.querySelectorAll('.design-preview-trigger');
+    const imagePreviewModal = document.getElementById('image-preview-modal');
+    const imagePreviewTitle = document.getElementById('image-preview-title');
+    const imagePreviewFull = document.getElementById('image-preview-full');
 
     if (featureModalClose) {
         featureModalClose.textContent = 'x';
@@ -72,6 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     };
 
+    const closeImagePreviewModal = () => {
+        imagePreviewModal.hidden = true;
+        imagePreviewFull.src = '';
+        document.body.style.overflow = '';
+    };
+
     featureTriggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
             const title = trigger.getAttribute('data-title') || 'Bot Features';
@@ -100,9 +110,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    designPreviewTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const image = trigger.getAttribute('data-image') || '';
+            const title = trigger.getAttribute('data-title') || 'Design Preview';
+
+            imagePreviewTitle.textContent = title;
+            imagePreviewFull.src = image;
+            imagePreviewModal.hidden = false;
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    imagePreviewModal.addEventListener('click', (event) => {
+        if (event.target instanceof HTMLElement && event.target.dataset.closeImageModal === 'true') {
+            closeImagePreviewModal();
+        }
+    });
+
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && !featureModal.hidden) {
             closeFeatureModal();
+        }
+
+        if (event.key === 'Escape' && !imagePreviewModal.hidden) {
+            closeImagePreviewModal();
         }
     });
     

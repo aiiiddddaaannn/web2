@@ -255,28 +255,26 @@
                         </div>
                         <div class="media-grid">
                             <article class="media-card">
-                                <a class="media-thumb design-thumb" href="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/image.png" target="_blank" rel="noopener noreferrer" aria-label="Open design preview image 1">
+                                <button class="media-thumb design-thumb design-preview-trigger" type="button" data-image="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/image.png" data-title="League Work #1" aria-label="Preview design image 1">
                                     <img src="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/image.png" alt="Design preview showing multiple basketball jersey concepts">
                                     <span class="media-badge">Preview</span>
-                                </a>
+                                </button>
                                 <div class="media-card-body">
                                     <p class="media-label">League Work #1</p>
                                     <h5>Warm-up Concepts</h5>
                                     <p class="media-description">Warm-up Hoodies for Individual Teams</p>
-                                    <a class="media-link" href="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/image.png" target="_blank" rel="noopener noreferrer">Open full image</a>
                                 </div>
                             </article>
 
                             <article class="media-card">
-                                <a class="media-thumb design-thumb" href="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/league%20preview%20%5Bpsd.png" target="_blank" rel="noopener noreferrer" aria-label="Open design preview image 2">
+                                <button class="media-thumb design-thumb design-preview-trigger" type="button" data-image="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/league%20preview%20%5Bpsd.png" data-title="League Work #2" aria-label="Preview design image 2">
                                     <img src="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/league%20preview%20%5Bpsd.png" alt="Design preview showing multiple dark jersey concepts">
                                     <span class="media-badge">Preview</span>
-                                </a>
+                                </button>
                                 <div class="media-card-body">
                                     <p class="media-label">League Work #2</p>
                                     <h5>League Jerseys</h5>
                                     <p class="media-description">Jersey Concepts Created for Individual Teams</p>
-                                    <a class="media-link" href="https://raw.githubusercontent.com/aiiiddddaaannn/web2/main/images/league%20preview%20%5Bpsd.png" target="_blank" rel="noopener noreferrer">Open full image</a>
                                 </div>
                             </article>
 
@@ -333,6 +331,18 @@
             </div>
             <h4 id="feature-modal-title">Bot Features</h4>
             <ul class="feature-list" id="feature-list"></ul>
+        </div>
+    </div>
+
+    <div class="image-preview-modal" id="image-preview-modal" hidden>
+        <div class="feature-modal-backdrop" data-close-image-modal="true"></div>
+        <div class="image-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="image-preview-title">
+            <div class="feature-modal-header">
+                <p class="showcase-eyebrow">Preview</p>
+                <button class="feature-modal-close" id="image-preview-close" type="button" aria-label="Close image preview" data-close-image-modal="true">x</button>
+            </div>
+            <h4 id="image-preview-title">Design Preview</h4>
+            <img id="image-preview-full" src="" alt="Full design preview">
         </div>
     </div>
 
