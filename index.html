@@ -25,7 +25,13 @@
                         alt="Dots YouTube profile picture"
                     >
                     <h3>My Youtube</h3>
-                    <a class="work-link" href="https://www.youtube.com/@dotscant" target="_blank" rel="noopener noreferrer">View Channel</a>
+                    <div class="card-actions">
+                        <a class="work-link" href="https://www.youtube.com/@dotscant" target="_blank" rel="noopener noreferrer">View Channel</a>
+                        <button class="disclaimer-button" type="button" aria-expanded="false" aria-controls="youtube-disclaimer">Disclaimer</button>
+                    </div>
+                    <div class="disclaimer-panel" id="youtube-disclaimer" hidden>
+                        <p>I only take USD rates for streaming.</p>
+                    </div>
                 </article>
 
                 <article class="work-card">
@@ -35,7 +41,13 @@
                         alt="Elusive Roblox group icon"
                     >
                     <h3>My Jersey Group</h3>
-                    <a class="work-link" href="https://www.roblox.com/communities/35756891/elusive" target="_blank" rel="noopener noreferrer">View Group</a>
+                    <div class="card-actions">
+                        <a class="work-link" href="https://www.roblox.com/communities/35756891/elusive" target="_blank" rel="noopener noreferrer">View Group</a>
+                        <button class="disclaimer-button" type="button" aria-expanded="false" aria-controls="jersey-disclaimer">Disclaimer</button>
+                    </div>
+                    <div class="disclaimer-panel" id="jersey-disclaimer" hidden>
+                        <p>I only work with leagues due to the 2D clothing update. I will NOT upload what I create, but you will be provided with all templates.</p>
+                    </div>
                 </article>
 
                 <article class="work-card">
@@ -45,10 +57,32 @@
                         alt="SoraUGC Roblox group icon"
                     >
                     <h3>My UGC Group</h3>
-                    <a class="work-link" href="https://www.roblox.com/communities/313255829/SoraUGC#!/about" target="_blank" rel="noopener noreferrer">View Group</a>
+                    <div class="card-actions">
+                        <a class="work-link" href="https://www.roblox.com/communities/313255829/SoraUGC#!/about" target="_blank" rel="noopener noreferrer">View Group</a>
+                        <button class="disclaimer-button" type="button" aria-expanded="false" aria-controls="ugc-disclaimer">Disclaimer</button>
+                    </div>
+                    <div class="disclaimer-panel" id="ugc-disclaimer" hidden>
+                        <p>1 piece upload: $27.5 (not 1:1, will have slight detail changes/sizing differences)</p>
+                        <p>2 piece upload: $35 (1:1)</p>
+                        <p>Models for profit are $75.</p>
+                        <p class="disclaimer-note">(I do not jack up the price just because it's 1:1, rather it's set to account for the doubled uploading costs. I profit the same amount off both.)</p>
+                    </div>
                 </article>
             </div>
         </section>
     </main>
+
+    <script>
+        document.querySelectorAll('.disclaimer-button').forEach((button) => {
+            button.addEventListener('click', () => {
+                const panel = document.getElementById(button.getAttribute('aria-controls'));
+                const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+                button.setAttribute('aria-expanded', String(!isOpen));
+                button.textContent = isOpen ? 'Disclaimer' : 'Close Disclaimer';
+                panel.hidden = isOpen;
+            });
+        });
+    </script>
 </body>
 </html>
