@@ -12,15 +12,19 @@
 body {
     min-height: 100vh;
     margin: 0;
-    display: grid;
-    place-items: center;
     background:
         radial-gradient(circle at 50% 35%, rgba(0, 255, 136, 0.08), transparent 32rem),
         #0a0a0a;
 }
 
 main {
-    width: min(42rem, calc(100% - 3rem));
+    width: min(68rem, calc(100% - 3rem));
+    margin: 0 auto;
+    padding: clamp(5rem, 12vh, 8rem) 0 5rem;
+}
+
+.intro {
+    max-width: 42rem;
 }
 
 h1 {
@@ -37,4 +41,86 @@ p {
     color: #b8b8b8;
     font-size: clamp(1rem, 2.4vw, 1.2rem);
     line-height: 1.7;
+}
+
+.work {
+    margin-top: clamp(4rem, 10vw, 7rem);
+}
+
+h2 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.04em;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.work-card {
+    display: flex;
+    min-height: 18rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.work-icon {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+h3 {
+    margin: 1.25rem 0 1.5rem;
+    font-size: 1.25rem;
+}
+
+.work-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    margin-top: auto;
+    padding: 0.7rem 1rem;
+    border: 1px solid rgba(0, 255, 136, 0.35);
+    border-radius: 999px;
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.08);
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.work-link:hover,
+.work-link:focus-visible {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.14);
+    transform: translateY(-2px);
+}
+
+.work-link:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+    main {
+        padding-top: 5rem;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        min-height: 15rem;
+    }
 }
