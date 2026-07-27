@@ -43,6 +43,34 @@ p {
     line-height: 1.7;
 }
 
+.discord-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.9rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.1rem;
+    border: 1px solid rgba(88, 101, 242, 0.6);
+    border-radius: 999px;
+    color: #c9ceff;
+    background: rgba(88, 101, 242, 0.16);
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.discord-link:hover,
+.discord-link:focus-visible {
+    border-color: #7289da;
+    background: rgba(88, 101, 242, 0.26);
+    transform: translateY(-2px);
+}
+
+.discord-link:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
 .work {
     margin-top: clamp(4rem, 10vw, 7rem);
 }
