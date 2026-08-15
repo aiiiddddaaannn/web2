@@ -12,35 +12,40 @@
 body {
     min-height: 100vh;
     margin: 0;
+    display: grid;
+    place-items: center;
     background:
-        radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.05), transparent 32rem),
+        radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.05), transparent 32rem),
         #0a0a0a;
 }
 
 main {
-    width: min(68rem, calc(100% - 3rem));
-    margin: 0 auto;
-    padding: clamp(5rem, 12vh, 8rem) 0 5rem;
-}
-
-.intro {
-    max-width: 42rem;
+    width: min(46rem, calc(100% - 3rem));
+    padding: 5rem 0;
 }
 
 h1 {
-    margin: 0 0 1rem -0.075em;
+    margin: 0 0 2rem -0.075em;
     color: #ffffff;
     font-size: clamp(3rem, 10vw, 6rem);
     line-height: 0.95;
     letter-spacing: -0.06em;
 }
 
+.bio {
+    max-width: 44rem;
+}
+
 p {
     margin: 0;
-    max-width: 39rem;
-    color: #b8b8b8;
+    color: #c2c2c2;
     font-size: clamp(1rem, 2.4vw, 1.2rem);
-    line-height: 1.7;
+    line-height: 1.75;
+}
+
+.signoff {
+    margin-top: 1.5rem;
+    color: #ffffff;
 }
 
 .discord-link {
@@ -48,7 +53,7 @@ p {
     align-items: center;
     justify-content: center;
     min-height: 2.9rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     padding: 0.75rem 1.1rem;
     border: 1px solid rgba(88, 101, 242, 0.6);
     border-radius: 999px;
@@ -71,144 +76,12 @@ p {
     outline-offset: 3px;
 }
 
-.work {
-    margin-top: clamp(4rem, 10vw, 7rem);
-}
-
-h2 {
-    margin: 0 0 1.5rem;
-    font-size: clamp(2rem, 5vw, 3rem);
-    letter-spacing: -0.04em;
-}
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.work-card {
-    display: flex;
-    min-height: 18rem;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 1.25rem;
-    background: rgba(255, 255, 255, 0.035);
-}
-
-.work-icon {
-    width: 5rem;
-    height: 5rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 1rem;
-    object-fit: cover;
-}
-
-h3 {
-    margin: 1.25rem 0 1.5rem;
-    font-size: 1.25rem;
-}
-
-.card-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    margin-top: auto;
-}
-
-.work-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.75rem;
-    padding: 0.7rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 999px;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.06);
-    font-weight: 650;
-    text-decoration: none;
-    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-}
-
-.work-link:hover,
-.work-link:focus-visible {
-    border-color: #ffffff;
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
-}
-
-.work-link:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 3px;
-}
-
-.disclaimer-button {
-    min-height: 2.75rem;
-    padding: 0.7rem 1rem;
-    border: 1px solid rgba(255, 72, 72, 0.5);
-    border-radius: 999px;
-    color: #ff6b6b;
-    background: rgba(255, 45, 45, 0.1);
-    font: inherit;
-    font-weight: 650;
-    cursor: pointer;
-    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-}
-
-.disclaimer-button:hover,
-.disclaimer-button:focus-visible,
-.disclaimer-button[aria-expanded="true"] {
-    border-color: #ff4d4d;
-    background: rgba(255, 45, 45, 0.18);
-    transform: translateY(-2px);
-}
-
-.disclaimer-button:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 3px;
-}
-
-.disclaimer-panel {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    border: 1px solid rgba(255, 72, 72, 0.25);
-    border-radius: 0.9rem;
-    background: rgba(255, 45, 45, 0.06);
-}
-
-.disclaimer-panel[hidden] {
-    display: none;
-}
-
-.disclaimer-panel p {
-    color: #e3b9b9;
-    font-size: 0.9rem;
-    line-height: 1.55;
-}
-
-.disclaimer-panel p + p {
-    margin-top: 0.75rem;
-}
-
-.disclaimer-panel .disclaimer-note {
-    color: #bb9a9a;
-    font-size: 0.82rem;
-}
-
-@media (max-width: 720px) {
+@media (max-width: 520px) {
     main {
-        padding-top: 5rem;
+        padding: 3rem 0;
     }
 
-    .work-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .work-card {
-        min-height: 15rem;
+    h1 {
+        margin-bottom: 1.5rem;
     }
 }
