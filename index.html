@@ -3,87 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="16 y/o. Read disclaimers before reaching out to me.">
+    <meta name="description" content="Dots is currently less available for work during junior year. Reach out on Discord for availability.">
     <title>Dots</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <section class="intro">
-            <h1>Dots</h1>
-            <p>16 y/o<br>read disclaimers before reaching out to me</p>
-            <a class="discord-link" href="https://discord.com/users/423302690223685633" target="_blank" rel="noopener noreferrer">Contact Me on Discord</a>
-        </section>
+        <h1>Dots</h1>
 
-        <section class="work" aria-labelledby="work-title">
-            <h2 id="work-title">My Work</h2>
+        <div class="bio">
+            <p>With my junior year starting, and being the busiest year of them all so far, I will be less available for work. Feel free to shoot me a DM, and I'll let you know the earliest times I'm available.</p>
+            <p class="signoff">Kind Regards,<br>Dots</p>
+        </div>
 
-            <div class="work-grid">
-                <article class="work-card">
-                    <img
-                        class="work-icon"
-                        src="https://yt3.googleusercontent.com/N26dTIClF-3EJVufoGvRrq0D7zznVnEs0nIf1hwIROdSWkc8xnffWFVcb-cALllLVPP0AvDsVw=s900-c-k-c0x00ffffff-no-rj"
-                        alt="Dots YouTube profile picture"
-                    >
-                    <h3>My Youtube</h3>
-                    <div class="card-actions">
-                        <a class="work-link" href="https://www.youtube.com/@dotscant" target="_blank" rel="noopener noreferrer">View Channel</a>
-                        <button class="disclaimer-button" type="button" aria-expanded="false" aria-controls="youtube-disclaimer">Disclaimer</button>
-                    </div>
-                    <div class="disclaimer-panel" id="youtube-disclaimer" hidden>
-                        <p>I only take USD rates for streaming.</p>
-                    </div>
-                </article>
-
-                <article class="work-card">
-                    <img
-                        class="work-icon"
-                        src="https://tr.rbxcdn.com/180DAY-f81a278ca55391a75c118805f1c2ce57/420/420/Image/Png/noFilter"
-                        alt="Elusive Roblox group icon"
-                    >
-                    <h3>My Jersey Group</h3>
-                    <div class="card-actions">
-                        <a class="work-link" href="https://www.roblox.com/communities/35756891/elusive" target="_blank" rel="noopener noreferrer">View Group</a>
-                        <button class="disclaimer-button" type="button" aria-expanded="false" aria-controls="jersey-disclaimer">Disclaimer</button>
-                    </div>
-                    <div class="disclaimer-panel" id="jersey-disclaimer" hidden>
-                        <p>I only work with leagues due to the 2D clothing update. I will NOT upload what I create, but you will be provided with all templates.</p>
-                    </div>
-                </article>
-
-                <article class="work-card">
-                    <img
-                        class="work-icon"
-                        src="https://tr.rbxcdn.com/180DAY-ad9128893bea0ed41a7ab59a6da524d7/420/420/Image/Png/noFilter"
-                        alt="SoraUGC Roblox group icon"
-                    >
-                    <h3>My UGC Group</h3>
-                    <div class="card-actions">
-                        <a class="work-link" href="https://www.roblox.com/communities/313255829/SoraUGC#!/about" target="_blank" rel="noopener noreferrer">View Group</a>
-                        <button class="disclaimer-button" type="button" aria-expanded="false" aria-controls="ugc-disclaimer">Disclaimer</button>
-                    </div>
-                    <div class="disclaimer-panel" id="ugc-disclaimer" hidden>
-                        <p>1 piece upload: $27.5 (not 1:1, will have slight detail changes/sizing differences)</p>
-                        <p>2 piece upload: $35 (1:1)</p>
-                        <p>Models for profit are $75.</p>
-                        <p class="disclaimer-note">(I do not jack up the price just because it's 1:1, rather it's set to account for the doubled uploading costs. I profit the same amount off both.)</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+        <a class="discord-link" href="https://discord.com/users/423302690223685633" target="_blank" rel="noopener noreferrer">Contact Me on Discord</a>
     </main>
-
-    <script>
-        document.querySelectorAll('.disclaimer-button').forEach((button) => {
-            button.addEventListener('click', () => {
-                const panel = document.getElementById(button.getAttribute('aria-controls'));
-                const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-                button.setAttribute('aria-expanded', String(!isOpen));
-                button.textContent = isOpen ? 'Disclaimer' : 'Close Disclaimer';
-                panel.hidden = isOpen;
-            });
-        });
-    </script>
 </body>
 </html>
